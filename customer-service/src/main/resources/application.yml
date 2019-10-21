@@ -1,0 +1,13 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: customer-service
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-service.eastus.azurecontainer.io:8761/eureka

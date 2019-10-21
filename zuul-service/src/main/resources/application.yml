@@ -1,0 +1,31 @@
+
+server:
+  port: 8091
+
+spring:
+  application:
+    name: zuul-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://eureka-service.eastus.azurecontainer.io:8761/eureka
+
+zuul:
+  routes:
+    customer:
+     path: /api/v1/repository/**
+     url: http://customer-service.eastus.azurecontainer.io:8092/customer
+    customer-feign:
+      path: /api/v1/feign/**
+      url: http://feign-service.eastus.azurecontainer.io:8093/customer
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000

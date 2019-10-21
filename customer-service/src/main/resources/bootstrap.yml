@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: customer-service
+
+  cloud:
+    config:
+      uri: http://config-service.eastus.azurecontainer.io:8888

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: zuul-service
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-service.eastus.azurecontainer.io:8761/eureka
